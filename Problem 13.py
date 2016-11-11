@@ -102,7 +102,7 @@ l.append("53503534226472524250874054075591789781264330331690")
 
 sum = 0
 
-for i in range(0,99):
+for i in range(0,100):
     sum = sum + int(l[i])
 sum = str(sum)
-print(sum[0:9])
+print(sum[0:10])
