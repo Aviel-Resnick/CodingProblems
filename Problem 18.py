@@ -22,4 +22,13 @@ for i in range(-15,-1):
   
   row1 = row1_str.split()
   row2 = row2_str.split()
-  
+  for x in range (0, len(row1)):
+    current_num_row1 = row1[x]
+    current_num_row2_1 = row2[x]
+    current_num_row2_2 = row2[x+1]
+    
+    if current_num_row2_1 > current_num_row2_2:
+      l[i*] = current_num_row1 + current_num_row2_1
+    else:
+      current_num_row1 = current_num_row1 + current_num_row2_2
+    
