@@ -15,20 +15,24 @@ l.append("91 71 52 38 17 14 91 43 58 50 27 29 48")
 l.append("63 66 04 68 89 53 67 30 73 16 69 87 40 31")
 l.append("04 62 98 27 23 09 70 98 73 93 38 53 60 04 23")
 
-for i in range(-15,-1):
-  abs_i = abs(i)
-  row1_str = l[abs_i - 2]
-  row2_str = l[abs_i - 1]
-  
-  row1 = row1_str.split()
-  row2 = row2_str.split()
-  for x in range (0, len(row1)):
-    current_num_row1 = row1[x]
-    current_num_row2_1 = row2[x]
-    current_num_row2_2 = row2[x+1]
-    
-    if current_num_row2_1 > current_num_row2_2:
-      l[i*] = current_num_row1 + current_num_row2_1
+rows = len(l)
+new_row = []
+
+#Change -3 to -14 
+for x in range(-14, 0):
+    if x == -14:
+        bottom_row = l[abs(x)].split()
     else:
-      current_num_row1 = current_num_row1 + current_num_row2_2
+        bottom_row = new_row
+        new_row = []
+
+    top_row = l[abs(x) - 1].split()
+
+    for y in range(0, len(top_row)):
+        bottom_1 = bottom_row[y]
+        bottom_2 = bottom_row[y + 1]
+
+        new_num = int(max(bottom_1, bottom_2)) + int(top_row[y])
+        new_row.append(new_num)
+    print(new_row)
     
