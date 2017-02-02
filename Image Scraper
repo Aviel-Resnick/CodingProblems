@@ -1,10 +1,9 @@
-import urllib2
-from bs4 import BeautifulSoup
+from html.parser import HTMLParser
+class MyParse(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        if tag=="img":
+            print(dict(attrs)["src"])
 
-url = "http://icecat.biz/p/toshiba/pscbxe-01t00een/satellite-pro-notebooks-4051528049077-Satellite+Pro+C8501GR-17732197.html"
-html = urllib2.urlopen(url)
-soup = BeautifulSoup(html)
-
-imgs = soup.findAll("div", {"class":"thumb-pic"})
-for img in imgs:
-        print img.a['href'].split("imgurl=")[1]
+h=MyParse()
+page=open("index.html").read()
+h.feed(page)
