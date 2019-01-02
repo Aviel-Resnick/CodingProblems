@@ -12,19 +12,14 @@ def sum_divisors(num):
 	if sum_divisors(x) > x:
 		abundent_group.write(str(x) + "\n")'''
 
+def possible(i):
+	
+
 with open('Problem 23 Abundent Numbers.txt') as f:
     content = f.read().splitlines()
 
-copy = content
+for i in range(1, 28123):
+	if possible(i) == false:
+		sum += i
 
-for x in range(1, len(content)-1):
-	current_num = content[x-1]
-	for y in range(1, len(content)-1):
-		num = current_num + content[y]
-		print(y, "=", content[y])
-		if num not in copy:
-			pass
-		else:
-			copy.remove(num)
-
-print(copy)
+print (sum)

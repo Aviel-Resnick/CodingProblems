@@ -1,20 +1,24 @@
-l = []
+import math
 
-def d(n):
-	sumx = 0
-	for i in range(1,n+1):
-		if n % i == 0 and i < n:
-			sumx = sumx + i
-	return sumx
+nums = 0
 
-def test(num):
-	num1 = d(num)
-	num2 = d(num1)
+def sumFunc(n):
+    sumOfDivs = 0
+    for i in range(1, math.ceil((n/2))+1):
+        if n % i == 0:
+            sumOfDivs += i
+    return(sumOfDivs)
 
-	if num2 == num and num2 != num1:
-		l.append(num)
-		l.append(num1)
+def test(a):
+    b = sumFunc(a)
+    if sumFunc(b) == a:
+        return True
+    else:
+        return False
 
-for x in range(200,10000):
-	test(x)
-print(sum(list(set(l))))
+for i in range(1,10000):
+    if test(i) == True:
+        nums += i
+
+print(nums)
+#40285

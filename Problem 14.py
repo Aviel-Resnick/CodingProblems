@@ -10,9 +10,8 @@ for i in range (1,1000000):
         else:
             num = num * 3 + 1
             currentLen = currentLen + 1
-            
+
     #print (i)
     if currentLen > longest:
         longest = currentLen
-        print ("Longest:", i) 
-            
+        print ("Longest:", i)
